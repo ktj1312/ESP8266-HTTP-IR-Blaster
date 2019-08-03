@@ -564,7 +564,7 @@ void setup() {
   server->on("/json", []() { // JSON handler for more complicated IR blaster routines
     Serial.println("Connection received - JSON");
 
-    DynamicJsonDocument root(1024);
+    DynamicJsonDocument root(2048);
     DeserializationError error = deserializeJson(root, server->arg("plain"));
 
     int simple = 0;
